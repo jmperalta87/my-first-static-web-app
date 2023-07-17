@@ -1,5 +1,8 @@
 {
   "trailingSlash": "auto",
+  "navigationFallback": {     
+    "rewrite": "/index.html" 
+  } ,
   "routes": [
     {
       "route": "/maintenance*",

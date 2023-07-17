@@ -1,17 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Vanilla JavaScript App</title>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex">
+  <link rel="shortcut icon" href="/sites/default/files/favicon.ico" type="image/ico" />
+  <title>IRC</title>
+  <link rel="shortcut icon" href="sites/all/themes/ng/assets/images/favicon.ico">
+  <link rel="apple-touch-icon" href="sites/all/themes/ng/assets/images/apple-touch-icon.png">
+  <style>
+    html {
+      box-sizing: border-box;
+      font-size: 16px;
+      font-family:akzidenz-grotesk,Arial,sans-serif;
+      -webkit-tap-highlight-color: transparent
+    }
+
+    body {
+        background-color: #f6f6f6
+    }
+    *,
+    *:before,
+    *:after {
+        box-sizing: inherit
+    }
+
+    img {
+        height: auto;
+        max-width: 100%;
+        border: 0 none
+    }
+
+    .toggle-visibility-hidden {
+        visibility: hidden
+    }
+
+    .toggle-visibility-shown {
+        visibility: visible
+    }
+
+    .page-unpublished,
+    .node-unpublished {
+        background-color: #fff4f4
+    }
+
+    .pull-left {
+        float: left
+    }
+
+    .pull-right {
+        float: right
+    }
+
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0
+    }
+
+    .sr-only-focusable:active,
+    .sr-only-focusable:focus {
+        position: static;
+        width: auto;
+        height: auto;
+        margin: 0;
+        overflow: visible;
+        clip: auto
+    }
+    .logo-wrap {
+      background-color:#fdc513;
+      padding:24px;
+      width:216px;
+      height:213px;
+      margin:109px auto 56px;
+      text-align: center;
+    }
+
+    .icon-maintenance-IRC-arrow {
+      margin:0 auto;
+      width: 170px;
+      height: 170px;
+    }
+
+    h1 {
+      font-size:60px;
+      letter-spacing: -3px;
+      margin-top:0;
+    }
+
+    .maintenance-text{
+      font-size: 36px;
+      font-weight: 100;
+      margin:0 auto;
+    }
+
+    .additional-links {
+      font-size: 36px;
+      font-weight: 700;
+      max-width: 850px;
+      margin:40px auto 50px;
+    }
+
+    .follow-us {
+      margin-bottom: 100px;
+    }
+
+    .follow-us-header {
+      font-size: 24px;
+      margin-top:56px;
+      font-weight: 200;
+      margin-bottom:20px;
+    }
+
+    .follow-us-icons svg {
+      height: 31px;
+      width: 31px;
+      margin-right: 22px;
+      margin-left: 22px
+    }
+
+    .link-style {
+      font-weight: bold;
+      color: #000;
+      font-size: 24px;
+      display: inline;
+      border-bottom: 2px solid #fdc513;
+      text-decoration: none;
+      line-height: 1.1;
+    }
+    .link-style:hover {
+      background-color: #fdc513;
+    }
+    .link-donation {
+      margin-right:45px;
+    }
+    .link-list {
+      list-style-type: none;
+      margin: 0;
+    }
+    .link-list li {
+      display: inline-block;
+      padding-bottom: 20px;
+    }
+    .link-list-wrapper {
+      display: inline-block;
+    }
+    @media (max-width: 640px) {
+      html {
+        font-size: 20px;
+      }
+      .logo-wrap {
+        zoom: .45;
+      }
+      h1 {
+        font-size: 28px;
+        letter-spacing: -1.5px;
+      }
+      .maintenance-text, .additional-links, .link-style {
+        font-size: 20px;
+      }
+      .link-style, .follow-us-header {
+        font-size: 18px;
+      }
+      .link-wrap {
+        display: block;
+      }
+      .link-style {
+        margin-right:0;
+        margin-left:0;
+      }
+      .link-list li {
+        padding-right:20px;
+      }
+    }
+  </style>
+  <script type="text/javascript" src="http://use.typekit.com/kak7thb.js"></script>
+  <script type="text/javascript">
+  <!--//--><![CDATA[//><!--
+  try{Typekit.load();}catch(e){}
+  //--><!]]>
+  </script>
 </head>
+<body style="text-align: center;">
+  <div style="height: 0; width: 0; position: absolute; visibility: hidden"><svg xmlns="http://www.w3.org/2000/svg"><symbol id="IRC-arrow" viewBox="0 0 16 16"><path d="M.044.044h15.862V6.15h-5.353l5.353 5.354v4.402h-4.402L6.15 10.553v5.353H.045V.044z" fill-rule="nonzero"></path></symbol><symbol id="facebook" viewBox="0 0 16 16"><path d="M9.052 15.04V8.626h2.17l.34-2.51H9.086V4.522c0-.712.204-1.22 1.255-1.22h1.325V1.06c-.24-.032-1.02-.1-1.935-.1-1.9 0-3.223 1.153-3.223 3.325v1.832h-2.17v2.51h2.17v6.412H9.05z"></path></symbol><symbol id="instagram" viewBox="0 0 16 16"><g fill-rule="nonzero"><path d="M11.98 0H4.02C1.84 0 .037 1.803.037 3.98v8.04c0 2.177 1.802 3.98 3.98 3.98h7.963c2.18 0 3.982-1.803 3.982-3.98V3.98c0-2.177-1.765-3.98-3.98-3.98zM4.02 1.465h7.96c1.39 0 2.518 1.127 2.518 2.516v1.39H10.29c-.6-.45-1.39-.713-2.177-.713-.827 0-1.578.263-2.18.714h-4.43V3.98c0-1.388 1.126-2.515 2.516-2.515zM9.652 8.45c0 .865-.714 1.578-1.578 1.578-.864 0-1.577-.713-1.577-1.577 0-.863.713-1.577 1.577-1.577s1.578.714 1.578 1.578zm2.328 6.085H4.02c-1.39 0-2.518-1.127-2.518-2.516V6.835h3.155c-.225.488-.375 1.014-.375 1.615 0 2.104 1.69 3.794 3.793 3.794s3.794-1.69 3.794-3.793c0-.563-.114-1.126-.377-1.614h3.005v5.183c0 1.388-1.127 2.515-2.517 2.515z"></path><path d="M13.333 4.17c0 .224-.187.45-.45.45H11.53c-.225 0-.45-.188-.45-.45V2.816c0-.225.188-.45.45-.45h1.353c.225 0 .45.187.45.45V4.17z"></path></g></symbol><symbol id="twitter" viewBox="0 0 16 16"><path d="M16 3.033c-.6.267-1.233.433-1.9.5.7-.367 1.233-1.033 1.467-1.8-.633.367-1.333.633-2.1.8-.6-.633-1.433-1.033-2.4-1.033-1.8 0-3.3 1.467-3.3 3.3 0 .267.033.5.1.733C5.167 5.4 2.734 4.1 1.1 2.1.833 2.6.667 3.167.667 3.767.667 4.9 1.234 5.9 2.134 6.5 1.6 6.467 1.1 6.333.634 6.1v.033c0 1.6 1.133 2.933 2.633 3.233-.267.067-.567.1-.867.1-.2 0-.433-.033-.633-.067.433 1.3 1.633 2.265 3.067 2.265-1.133.867-2.533 1.4-4.067 1.4-.267 0-.533 0-.767-.033 1.467.933 3.167 1.467 5.033 1.467 6.033 0 9.333-5 9.333-9.334v-.433C15 4.267 15.566 3.7 16 3.033z"></path></symbol><symbol id="youtube" viewBox="0 0 16 16"><path d="M15.702 4.428c-.297-1.228-.893-1.675-1.935-1.86C13.172 2.492 10.27 2.38 8 2.38c-2.307 0-5.172.113-5.767.187C1.19 2.753.595 3.2.26 4.427.186 4.838 0 7.07 0 7.888v.187c0 .856.186 3.09.26 3.498.298 1.19.893 1.675 1.935 1.823.596.075 3.498.186 5.768.186 2.307 0 5.172-.11 5.767-.185 1.042-.148 1.675-.632 1.972-1.823.112-.41.298-2.642.298-3.498v-.186c0-.818-.186-3.05-.298-3.46zm-9.376 5.805V5.73l4.204 2.196-4.204 2.307z" fill-rule="nonzero"></path></symbol></svg></div>
 
-<body>
-  <main>
-    <h1>Vanilla JavaScript App</h1>
-  </main>
+<div class="logo-wrap">
+  <svg class="icon-maintenance-IRC-arrow"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#IRC-arrow"></use></svg>
+</div>
+
+  <h1>Thanks for visiting</h1>
+
+  <p class="maintenance-text">Our website is currently unavailable. Please check back soon!</p>
+
+  <p class="additional-links">You can still make a donation at these links:</p>
+<div class="link-list-wrapper">
+  <ul class="link-list">
+    <li class="link-wrap first"><a href="https://help.rescue.org/donate" class="link-style link-donation">Donate (US)</a></li>
+    <li class="link-wrap"><a href="https://help.rescue.org/donate" class="link-style link-donation">Donate (UK)</a></li>
+    <li class="link-wrap"><a href="https://help.rescue.org/donate" class="link-style link-donation">Donate (Euro)</a></li>
+    <li class="link-wrap"><a href="https://help.rescue.org/donate" class="link-style link-donation">Spenden (DE)</a></li>
+    <li class="link-wrap last"><a href="https://help.rescue.org/donate" class="link-style link-donation">Ge en gåva (SE)</a></li>
+  </ul>
+</div>
+<div class="follow-us"><h6 class="follow-us-header">Follow us</h6><div class="follow-us-icons"><a href="https://twitter.com/RESCUEorg" target="_blank" class=""><svg class="icon-twitter-header"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use></svg></a><a href="https://www.facebook.com/InternationalRescueCommittee/" target="_blank" class=""><svg class="icon-facebook-header"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use></svg></a><a href="https://www.instagram.com/rescueorg" target="_blank" class=""><svg class="icon-instagram-header"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use></svg></a><a href="https://www.youtube.com/user/theirc" target="_blank" class=""><svg class="icon-youtube-header"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#youtube"></use></svg></a></div></div>
+
 </body>
-
 </html>

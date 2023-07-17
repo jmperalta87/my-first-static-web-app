@@ -5,7 +5,7 @@
   } ,
   "routes": [
     {
-      "route": "/maintenance*",
+      "route": "/maintenance",
       "rewrite": "/maintenance.html"
     }
   ]

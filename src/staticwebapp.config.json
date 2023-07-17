@@ -1,0 +1,9 @@
+{
+  "trailingSlash": "auto",
+  "routes": [
+    {
+      "route": "/maintenance*",
+      "rewrite": "/maintenance.html"
+    }
+  ]
+}

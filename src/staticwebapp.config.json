@@ -6,7 +6,7 @@
   "routes": [
     {
       "route": "/maintenance",
-      "rewrite": "/maintenance.html"
+      "rewrite": "/maintenance/maintenance.html"
     }
   ]
 }

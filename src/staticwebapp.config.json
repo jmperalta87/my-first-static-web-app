@@ -7,6 +7,10 @@
     {
       "route": "/maintenance",
       "rewrite": "/maintenance/maintenance.html"
+    },
+    {
+      "route": "/testing",
+      "rewrite": "/testing/testing.html"
     }
   ]
 }
